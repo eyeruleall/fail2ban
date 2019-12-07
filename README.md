@@ -14,4 +14,4 @@ For example, to monitor asterisk:
     ENABLE_SERVICE_asterisk=/var/log/asterisk/messages
     ENABLE_OPTIONS_asterisk_bantime=1w
 
-Make sure to pass in the log file for the service you are trying to monitor.
+Make sure to pass in the log file for the service you are trying to monitor as a volume.
