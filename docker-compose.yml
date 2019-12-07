@@ -1,0 +1,15 @@
+version: '2.4'
+services:
+  fail2ban:
+    container_name: fail2ban
+    build: .
+    #image: eyeruleall/fail2ban
+    network_mode: host
+    restart: always
+    environment:
+      - ENABLE_SERVICE_asterisk=/var/log/asterisk/messages
+      - ENABLE_OPTIONS_asterisk_bantime=1w
+    volumes:
+      - ./asterisk/logs:/var/log/asterisk
+    cap_add:
+      - NET_ADMIN
