@@ -9,6 +9,10 @@ if [ ! -f "$INITALIZED" ]; then
   sed -i -e 's|logtarget = /var/log/fail2ban.log|logtarget = /dev/stdout|' /etc/fail2ban/fail2ban.conf
   sed -i -e 's|loglevel = INFO|loglevel = 4|' /etc/fail2ban/fail2ban.conf
   ##
+  # WATCH ALL PROTOCOLS
+  ##
+  sed -i 's/protocol = tcp/protocol = all/' /etc/fail2ban/jail.conf
+  ##
   # CLEAN OLD SERVICES
   ##
   rm /etc/fail2ban/jail.d/*
