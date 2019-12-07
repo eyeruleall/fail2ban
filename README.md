@@ -1,7 +1,7 @@
 # fail2ban
  Docker image for fail2ban
 
-Pass in environment variables to monitor specific services. /etc/fail2ban/jail.d/<service-name>.conf will be created automatically.
+Pass in environment variables to monitor specific services. /etc/fail2ban/jail.d/*.conf will be created automatically.
 
     ENABLE_SERVICE_<service-name>=<log-file>
 
