@@ -9,7 +9,5 @@ services:
     environment:
       - ENABLE_SERVICE_asterisk=/var/log/asterisk/messages
       - ENABLE_OPTIONS_asterisk_bantime=1w
-    volumes:
-      - ./asterisk/logs:/var/log/asterisk
     cap_add:
       - NET_ADMIN

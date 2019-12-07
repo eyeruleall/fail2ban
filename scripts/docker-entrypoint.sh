@@ -6,7 +6,7 @@ if [ ! -f "$INITALIZED" ]; then
   ##
   # LOG TO STDOUT
   ##
-  sed -i -e 's|logtarget = /var/log/fail2ban.log|logtarget = /dev/stdout|' /etc/fail2ban/fail2ban.conf
+  sed -i -e 's|logtarget = /var/log/fail2ban.log|logtarget = STDOUT|' /etc/fail2ban/fail2ban.conf
   sed -i -e 's|loglevel = INFO|loglevel = 4|' /etc/fail2ban/fail2ban.conf
   ##
   # WATCH ALL PROTOCOLS
@@ -51,8 +51,4 @@ fi
 ##
 # CMD
 ##
-cat /etc/fail2ban/fail2ban.conf
-cat /etc/fail2ban/jail.d/*.conf
-echo "CMD: exec docker CMD"
-echo "$@"
-exec "$@"
+exec $@
